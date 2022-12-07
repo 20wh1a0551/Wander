@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <style>
+            .logo{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-style: italic;
+                color: white;
+                padding-top:2rem;
+                text-align: center;
+            }
+            body{
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+                list-style: none;
+                font-family: 'Poppins', sans-serif;
+
+            }
+            .topbar{
+                width: 100%;
+                height: 70px;
+                background-color: #c1454a;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: white;
+            }
+            .menu ul{
+                display: flex;
+                align-items: center;
+                list-style: none;
+                font-family: 'garamond';
+            }
+            .menu ul li a{
+                text-decoration: none;
+                color: white;
+                padding: 5px 12px;
+                letter-spacing: 1px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .menu ul li a:hover{
+                border-bottom: 3px solid white;
+                transition: 0.4s;
+            } 
+            .signout a{
+                text-decoration: none;
+                color: white;
+                font-size: 15px;
+                font-weight: bold;
+                border-radius: 12px;
+                padding: 10px 30px;
+                border: 2px solid white;
+                font-family: 'garamond';
+                letter-spacing: 1px;
+            }
+            .signout a:hover{
+                background-color: black;
+                transition: 0.6s;
+            }
+            .features{
+                padding: 100px 70px;
+            }
+            h1
+            {
+                text-align: center;
+                padding-bottom: 30px;
+            }
+            .price{
+                width: 50 px;
+                height:  20px;
+                background: #ff5722;
+                color:  #fff;
+                font-weight: 600;
+                border-radius: 50%;
+                padding:  17px;
+                box-shadow: 0 0 6px 1px rgba(37, 73, 214, 0.18);
+                position:absolute;
+                left: 20 px;
+                bottom: 200px;
+            }
+            .feature-img
+            {
+                /* /padding: 20px;/ */
+                width: 100%;
+                position:  relative;
+                flex: 1 1 30rem;
+                object-fit: cover;
+            }
+            form {
+                background-color: white;
+                width: 500px;
+                height: 44px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .feature-details{
+                word-wrap: break-word;
+                padding: 20px;
+                text-align: justify;
+            }
+            .feature-details h4{
+                font-weight: 600;
+                margin-top: 20px;
+            }
+            .feature-box{
+                box-shadow: 0 0 10px 1px rgba(37, 73, 214, 0.18);
+                margin-bottom: 30px ;
+                width: 350px;
+            }
+            .features .container{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2 rem;
+            }
+            .features .container .feature-box{
+                box-shadow: 0 0 10px 1px rgba(37, 73, 214, 0.18);
+                margin-bottom: 30px ;
+                width: 300px;
+                flex: 1 1 30rem;
+                overflow: hidden;
+            }
+            .search{
+                width: 100%;
+                min-height: 100vh;
+                background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/newscms/2017_20/2000986/170515-better-travelling-healthy-london-se-521p.jpg");
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            input {
+                all: unset;
+                font: 16px system-ui;
+                color: black;
+                height: 100%;
+                width: 100%;
+                padding: 10px 10px;
+            }
+
+            ::placeholder {
+                color: grey;
+                opacity: 0.8; 
+            }
+
+            button {
+                all: unset;
+                width: 44px;
+                height: 44px;
+                cursor: pointer;
+            }
+            .pic{
+                word-wrap: break-word;
+            }
+            #leftbox {
+                float:left; 
+                background: white;
+                width: 25%;
+                height:280px;
+                margin-right: 9rem;
+            }
+            #middlebox{
+                float:left; 
+                background: white;
+                width:25%;
+                height:280px;
+                margin-right: 3rem;
+            }
+            #rightbox{
+                float:right;
+                background: white;
+                width:25%;
+                height:280px;
+                /* margin-right: 5rem; */
+            }
+        </style>
+        <link href = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    </head>
+    <body>
+        <div class="topbar">
+        <div class="logo">
+            <h1>Wander</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="http://localhost:3000/blog">Blogs</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">Discounts</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Booking</a></li>
+            </ul>
+        </div>
+        <div class="signout">
+            <a href="http://localhost:3000/login">Sign Out</a>
+        </div>
+    </div>
+
+        <div class = "search" class = "text-center">
+            <form action="/search" method="GET">
+                <input type="textbox" placeholder="Search" name = "wanderSearch" id = "search">
+                <button type="submit" onclick="getInputValue();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+    <section class = "features">
+        <h1>Featured Destinations</h1>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4" id = "leftbox">
+            <div class="feature-box">
+                <div class="feature-img" >
+
+                    <img  src="https://mondrian.mashable.com/uploads%252F2016%252F9%252F19%252FAlasdairTurner_3340.jpg%252Ffit-in__1440x1440.jpg?signature=dU0PgGrwyEkinHNRZhW69xKh6XM=" width = 300px height = 200px>
+
+                    <div class = "price">
+                        <p>78$</p>
+                    </div>
+                    <div class = "rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class = "feature-details">
+                        <h4>Antarctica</h4>
+                        <p>Surreal blue glaciers, active volcanoes, the rough waterways of the Drake Passage, and 360-degree views of untouched snow.There truly is nowhere else on Earth like this pristine world of ice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" id = "middlebox">
+            <div class="feature-box">
+                <div class="feature-img" >
+
+                    <img  src="https://www.zicasso.com/static/1613b7fe4e02309dcd902b3f19405262/304cc/1613b7fe4e02309dcd902b3f19405262.jpg" width = 300px height = 200px>
+
+                    <div class = "price">
+                        <p>92$</p>
+                    </div>
+                    <div class = "rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class = "feature-details">
+                        <h4>New Zealand</h4>
+                        <p>From pristine beaches and lush native forests to rugged mountains and clear blue lakes, New Zealand's outdoors really can't be beaten. What a scenic beauty New Zealand is..!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" id = "rightbox">
+            <div class="feature-box">
+                <div class="feature-img" >
+
+                    <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Amsterdam_Zentrum_20091106_075.JPG/1200px-Amsterdam_Zentrum_20091106_075.JPG" width = 300px height = 200px>
+
+                    <div class = "price">
+                        <p>89$</p>
+                    </div>
+                    <div class = "rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class = "feature-details">
+                        <h4>Amsterdam</h4>
+                        <p>Amsterdam, city and port, western Netherlands, located on the IJsselmeer and connected to the North Sea. It is the capital and the principal commercial and financial centre of the Netherlands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .main{
+            text-align: center;
+
+        }
+        body{
+            --color-primary: #009579;
+            --color-primary-dark: #007f67;
+            --color-secondary: #252c6a;
+            --color-error: #cc3333;
+            --color-success: #4bb544;
+            --border-radius: 4px;
+
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            background: var(--color-primary);
+            background-size: cover;
+            background-image: url("https://wallpapercave.com/wp/wp4366040.jpg");
+        }
+        .place-info{
+            width: 400px;
+            height: 100px;
+            max-width: 400px;
+            margin: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
+            background: #ffffff;
+            font: 500 1rem 'Quicksand', sans-serif;
+        }
+        .overview{
+            width: 400px;
+            height: 300px;
+            max-width: 400px;
+            margin: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
+            background: #ffffff;
+            font: 500 1rem 'Quicksand', sans-serif;
+        }
+        body {
+  /* background: #333; */
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+        /* #scroll-container {
+        border: 3px solid black;
+        border-radius: 5px;
+        overflow: hidden;
+        }
+
+        #scroll-text {
+        /* animation properties */
+        /* -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        
+        -moz-animation: my-animation 15s linear infinite;
+        -webkit-animation: my-animation 15s linear infinite;
+        animation: my-animation 15s linear infinite;
+        }
+
+        /* for Firefox */
+        /* @-moz-keyframes my-animation {
+        from { -moz-transform: translateX(100%); }
+        to { -moz-transform: translateX(-100%); }
+        }
+
+        /* for Chrome */
+        /* @-webkit-keyframes my-animation {
+        from { -webkit-transform: translateX(100%); }
+        to { -webkit-transform: translateX(-100%); }
+        } */ *
+
+        /* @keyframes my-animation {
+        from {
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+        to {
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        } */
+    /* } */
+    </style>
+</head>
+<body>
+    <div class="typewriter">
+        <h1>Here's your <i>Wander</i> search...</h1>
+      </div>
+    <!-- <div id="scroll-container">
+        <div id="scroll-text">Here's your wander Search<div>
+    </div> -->
+    <main id="main">
+        <% for(var i=0; i<userData.length; i++) { %>
+            <div class="place-info"> 
+                <h3><b><i><%= userData[i].name %></i></b></h3>
+                <span class="green"><%= userData[i]["types"][0] %></span>
+            </div>
+            <div class="overview">
+                <p>Latitude: <%=userData[i]["location"]["lat"]%></p><br>
+                <p>Longitude: <%=userData[i]["location"]["lng"]%></p><br>
+                <p>Address: <%=userData[i].address %></p><br>
+                <p>Phone Number: <%=userData[i]["phone_number"] %></p><br>
+                <p>Website:<%=userData[i]["website"]%>
+
+            </div>
+        </div>
+        <% } %>
+    </main> 
+</body>
+</html>
